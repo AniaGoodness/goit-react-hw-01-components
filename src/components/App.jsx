@@ -3,9 +3,9 @@ import Profile from '../components/Profile/Profile';
 import user from '../data/user.json';
 import Statistics from "../components/Statistics/Statistics";
 import data from "../data/data.json";
-import { FriendListItem } from "./FriendList/FriendList";
-import FriendList from "./FriendList/FriendList";
+import FriendList from "../components/FriendList/FriendList";
 import friends from "../data/friends.json";
+
 
 
 export const App = () => {
@@ -22,13 +22,10 @@ export const App = () => {
         title="Upload stats"
         stats={data}
       />
-      <FriendList>
-        <FriendListItem
-          avatar={friends.avatar}
-          name={friends.name}
-          isOnline={friends.isOnline}
-        />
-      </FriendList>
+      <FriendList
+        friends={friends}
+      />
     </Fragment>
   );
 };
+

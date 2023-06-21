@@ -19,17 +19,17 @@ const Profile = ({
                 <p className={css.location}>{location}</p>
             </div>
             <ul className={css.stats}>
-                <li>
-                    <span className={css.label}></span>
-                    <span className={css.quantity}></span>
+                <li className={css.statsItem}>
+                    <span className={css.label}>Followers</span>
+                    <span className={css.quantity}>{stats.followers}</span>
                 </li>
-                <li>
-                    <span className={css.label}></span>
-                    <span className={css.quantity}></span>
+                <li className={css.statsItem}>
+                    <span className={css.label}>Views</span>
+                    <span className={css.quantity}>{stats.views}</span>
                 </li>
-                <li>
-                    <span className={css.label}></span>
-                    <span className={css.quantity}></span>
+                <li className={css.statsItem}>
+                    <span className={css.label}>Likes</span>
+                    <span className={css.quantity}>{stats.likes}</span>
                 </li>
             </ul>
         </div>
@@ -42,10 +42,10 @@ Profile.propTypes = {
     tag: PropTypes.string,
     location: PropTypes.string,
     avatar: PropTypes.string,
-    stats: PropTypes.shape({
+    stats: PropTypes.arrayOf(PropTypes.shape({
         followers: PropTypes.number.isRequired,
         views: PropTypes.number.isRequired,
         likes: PropTypes.number.isRequired,
-    }),
+    })),
 }
 export default Profile

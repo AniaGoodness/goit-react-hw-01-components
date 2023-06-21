@@ -14,7 +14,7 @@ const Statistics = ({
          <ul className={css.statList}>
                 
         {stats.map(index=> (
-            <li key={index.id}className={css.item}>
+            <li key={index.id} className={css.item}>
             <span className={css.label}>{index.label} </span>
             <span className={css.percentage}>{index.percentage}%</span>
       </li>
